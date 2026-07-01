@@ -1,0 +1,43 @@
+#include<stdio.h>
+#include<stdlib.h>
+void Display(int Arr[], int iSize)
+{
+    int iCnt=0;
+    printf("elements of the array are :\n");
+
+    for(iCnt=0;iCnt<iSize;iCnt++)
+    {
+        printf("%d",Arr[iCnt]);
+    }
+
+}
+int main()
+{
+    int *Brr=NULL;
+    int iLength=0;
+    int iCnt=0;
+
+    //Step 1: Accept the number of elements.
+    printf("Enter the number of Element :\n");
+    scanf("%d",&iLength);
+
+    //Step 2: Allocate the memory.
+    Brr=(int *)malloc(iLength* sizeof(int));
+
+    //Step 3: Accept the Values from user.
+    printf("Enter the Elements :\n");
+    for(iCnt=0;iCnt<iLength;iCnt++)
+    {
+        scanf("%d",&Brr[iCnt]);
+    }
+
+    //Step4: Use the memory.
+    Display(Brr,iLength);
+
+
+    //Step5: Deallocate the memory. 
+    free(Brr);
+
+    return 0;
+}
+
